@@ -17,7 +17,7 @@ namespace DoAnCuoiKy.Gui
     public partial class CustomerHomeForm : Form
     {
         private Person person;
-        
+        // test git
 
         public CustomerHomeForm()
         {
