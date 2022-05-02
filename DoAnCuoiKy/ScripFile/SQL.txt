@@ -1,0 +1,115 @@
+Drop databse QuanLyBanHang
+create database QuanLyBanHang
+
+USE QuanLyBanHang
+GO
+
+CREATE TABLE dbo.Category(
+	cat_id varchar(10) PRIMARY KEY,
+	cat_name varchar(10) NOT NULL,
+)
+GO
+
+CREATE TABLE dbo.Product(
+	pro_id varchar(10) PRIMARY KEY,
+	cat_id varchar(10) references Category(cat_id),
+	pro_name varchar(10) NOT NULL,
+	quantity_perUnit varchar(10) NULL,
+	unit_price int NOT NULL,
+	units_instock int NOT NULL,
+	units_onOrder int NOT NULL,
+	pro_status varchar(10) NOT NULL,
+	product_img text,
+)
+Go
+
+CREATE TABLE dbo.[Role](
+	role_id varchar(10) PRIMARY KEY,
+	role_name varchar(10) NOT NULL,
+)
+Go
+
+CREATE TABLE dbo.Person(
+	per_id varchar(10) PRIMARY KEY,
+	role_id varchar(10) references [Role](role_id),
+	per_name varchar(40) NOT NULL,
+	per_gender varchar(20) NOT NULL,
+	per_date date NOT NULL,
+	per_regis_date date NOT NULL,
+	per_address varchar(40) NULL,
+	per_phone_number varchar(20) NULL,
+	per_email varchar(40) NOT NULL,
+	per_password varchar(255) NOT NULL,
+	per_status varchar(20) NOT NULL,
+	
+)
+Go
+
+CREATE TABLE dbo.[Order](
+	order_id varchar(10) PRIMARY KEY,
+	cus_id varchar(10) references Person(per_id),
+	emp_id varchar(10) references Person(per_id),
+	order_date date null,
+	require_date date null,
+	shipped_date date null,
+	ship_name varchar(40),
+	ship_address varchar(40),
+	ship_phone varchar(20),
+)
+Go
+
+CREATE TABLE dbo.[OrderItem](
+	order_id varchar(10) references [Order](order_id),
+	product_id varchar(10) references Product(pro_id),
+	unit_price int not null,
+	quantity int not null,
+	discount int null,
+)
+Go
+insert into [Role] values  ('r_1','customer')
+insert into [Role] values  ('r_2','employee')
+insert into [Role] values  ('r_3','manager')
+
+GO
+
+insert into Person values  ('p_1','r_1','Nguyen Van Nam','nam','2002-02-10','2021-04-03','Quan 9','0123456789','customer@gmail.com','$2b$10$ItXnDl8FlINsbMOWYWhiX.tFhOkyTz6iCYFBSy96Pmvm8stBsvB6G','active')
+insert into Person values  ('p_2','r_2','Duong Van Hoang','nam','2002-02-20','2021-04-03','Thu Duc','0123456788','employee@gmail.com','$2b$10$ItXnDl8FlINsbMOWYWhiX.tFhOkyTz6iCYFBSy96Pmvm8stBsvB6G','active')
+insert into Person values  ('p_3','r_3','Nguyen Le Quoc Khanh','nam','2002-02-03','2021-04-03','Go Vap','0123456777','admin@gmail.com','$2b$10$ItXnDl8FlINsbMOWYWhiX.tFhOkyTz6iCYFBSy96Pmvm8stBsvB6G','active')
+insert into Person values  ('p_4','r_2','Nguyen Dinh Hoang','nam','2002-01-10','2021-04-03','Quan 9','0123456789','employee1@gmail.com','$2b$10$ItXnDl8FlINsbMOWYWhiX.tFhOkyTz6iCYFBSy96Pmvm8stBsvB6G','active')
+go
+
+insert into Category values  ('cat_1','Rau Cu')
+insert into Category values  ('cat_2','Trai Cay')
+insert into Category values  ('cat_3','Thit Trung')
+GO
+
+
+
+insert into Product values  ('pro_1','cat_1','Bap Cai', 'kg', 20000,200,20,'active','bap-cai.jpg')
+insert into Product values  ('pro_2','cat_1','Ca Chua', 'kg', 15000,300,10,'active','ca-chua.jpg')
+insert into Product values  ('pro_3','cat_1','Ca Rot', 'kg', 13000,400,30,'active','ca-rot.jpg')
+insert into Product values  ('pro_4','cat_1','Sup Lo', 'kg', 30000,200,0,'active','sup-lo.jpg')
+insert into Product values  ('pro_5','cat_1','Toi', 'kg', 8000,500,0,'active','toi.jpg')
+insert into Product values  ('pro_6','cat_1','Hanh Tay', 'kg', 5000,50,10,'active','hanh-tay.jpg')
+
+
+insert into Product values  ('pro_7','cat_2','Dau Tay', 'kg', 10000,100,10,'active','dau-tay.jpg')
+insert into Product values  ('pro_8','cat_2','Tao', 'kg', 50000,50,0,'active','tao.jpg')
+insert into Product values  ('pro_9','cat_2','Thanh Long', 'kg', 14000,50,10,'active','thanh-long.jpg')
+
+insert into Product values  ('pro_10','cat_3','Ga', 'kg', 120000,10,5,'active','ga.jpg')
+insert into Product values  ('pro_11','cat_3','Thit Heo', 'kg', 140000,20,0,'active','thi-lon.png')
+GO
+
+
+Create table CartItem
+(
+	product_id varchar(10)primary key references Product(pro_id),
+	quantity int not null,
+	totalPrice int ,
+)
+go
+
+
+
+

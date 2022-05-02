@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ca52453715ad430c8b9506480cba43e5" Name="Diagram1" ZoomLevel="98">
+        <EntityTypeShape EntityType="QuanLyBanHangModel.Category" Width="1.5" PointX="2.125" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBanHangModel.Order" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBanHangModel.Person" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBanHangModel.Product" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBanHangModel.Role" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyBanHangModel.OrderItem" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
+        <AssociationConnector Association="QuanLyBanHangModel.FK__Product__cat_id__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBanHangModel.FK__Order__cus_id__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBanHangModel.FK__Order__emp_id__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBanHangModel.FK__OrderItem__order__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBanHangModel.FK__Person__role_id__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyBanHangModel.FK__OrderItem__produ__31EC6D26" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="QuanLyBanHangModel.CartItem" Width="1.5" PointX="8.25" PointY="5.75" />
+        <AssociationConnector Association="QuanLyBanHangModel.FK__CartItem__produc__45F365D3" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

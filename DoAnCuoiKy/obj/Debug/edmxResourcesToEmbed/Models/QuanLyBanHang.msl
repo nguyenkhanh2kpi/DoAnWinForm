@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QuanLyBanHangModelStoreContainer" CdmEntityContainer="QuanLyBanHangEntities3">
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="QuanLyBanHangModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="cat_id" ColumnName="cat_id" />
+          <ScalarProperty Name="cat_name" ColumnName="cat_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="QuanLyBanHangModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="cus_id" ColumnName="cus_id" />
+          <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+          <ScalarProperty Name="order_date" ColumnName="order_date" />
+          <ScalarProperty Name="require_date" ColumnName="require_date" />
+          <ScalarProperty Name="shipped_date" ColumnName="shipped_date" />
+          <ScalarProperty Name="ship_name" ColumnName="ship_name" />
+          <ScalarProperty Name="ship_address" ColumnName="ship_address" />
+          <ScalarProperty Name="ship_phone" ColumnName="ship_phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="People">
+      <EntityTypeMapping TypeName="QuanLyBanHangModel.Person">
+        <MappingFragment StoreEntitySet="Person">
+          <ScalarProperty Name="per_id" ColumnName="per_id" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="per_name" ColumnName="per_name" />
+          <ScalarProperty Name="per_gender" ColumnName="per_gender" />
+          <ScalarProperty Name="per_date" ColumnName="per_date" />
+          <ScalarProperty Name="per_regis_date" ColumnName="per_regis_date" />
+          <ScalarProperty Name="per_address" ColumnName="per_address" />
+          <ScalarProperty Name="per_phone_number" ColumnName="per_phone_number" />
+          <ScalarProperty Name="per_email" ColumnName="per_email" />
+          <ScalarProperty Name="per_password" ColumnName="per_password" />
+          <ScalarProperty Name="per_status" ColumnName="per_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="QuanLyBanHangModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="pro_id" ColumnName="pro_id" />
+          <ScalarProperty Name="cat_id" ColumnName="cat_id" />
+          <ScalarProperty Name="pro_name" ColumnName="pro_name" />
+          <ScalarProperty Name="quantity_perUnit" ColumnName="quantity_perUnit" />
+          <ScalarProperty Name="unit_price" ColumnName="unit_price" />
+          <ScalarProperty Name="units_instock" ColumnName="units_instock" />
+          <ScalarProperty Name="units_onOrder" ColumnName="units_onOrder" />
+          <ScalarProperty Name="pro_status" ColumnName="pro_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="QuanLyBanHangModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="role_name" ColumnName="role_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderItems">
+      <EntityTypeMapping TypeName="QuanLyBanHangModel.OrderItem">
+        <MappingFragment StoreEntitySet="OrderItem">
+          <ScalarProperty Name="order_id" ColumnName="order_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="unit_price" ColumnName="unit_price" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
