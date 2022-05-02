@@ -17,7 +17,7 @@ namespace DoAnCuoiKy.Gui
     public partial class CustomerHomeForm : Form
     {
         private Person person;
-        // test git
+
 
         public CustomerHomeForm()
         {
@@ -152,7 +152,8 @@ namespace DoAnCuoiKy.Gui
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            var form = new CheckOutForm();
+            buttonCart_Click(sender, e);
+            var form = new CheckOutForm(this.person);
             form.Show();
         }
     }

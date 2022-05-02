@@ -67,6 +67,7 @@
     <EntitySetMapping Name="OrderItems">
       <EntityTypeMapping TypeName="QuanLyBanHangModel.OrderItem">
         <MappingFragment StoreEntitySet="OrderItem">
+          <ScalarProperty Name="item_id" ColumnName="item_id" />
           <ScalarProperty Name="order_id" ColumnName="order_id" />
           <ScalarProperty Name="product_id" ColumnName="product_id" />
           <ScalarProperty Name="unit_price" ColumnName="unit_price" />

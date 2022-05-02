@@ -28,11 +28,7 @@ namespace DoAnCuoiKy
 
             using(var q = new QuanLyBHEntity())
             {
-                var c = new Category();
-                c.cat_id = "cat_1";
-                c.cat_name = "rau cu";
-                q.Categories.Add(c);
-                q.SaveChanges();
+ 
             }
         }
     }

@@ -84,7 +84,10 @@ namespace DoAnCuoiKy.UserController
                 {
                     if (item.product_id == this.product.pro_id)
                     {
-                        item.quantity += 1;
+                        if (item.quantity < item.Product.units_instock)
+                        {
+                            item.quantity += 1;
+                        }
                         item.totalPrice = item.Product.unit_price * item.quantity;
                         find = true;
                     }

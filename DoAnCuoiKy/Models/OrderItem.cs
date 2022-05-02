@@ -19,6 +19,7 @@ namespace DoAnCuoiKy.Models
         public int unit_price { get; set; }
         public int quantity { get; set; }
         public Nullable<int> discount { get; set; }
+        public int item_id { get; set; }
     
         public virtual Order Order { get; set; }
         public virtual Product Product { get; set; }

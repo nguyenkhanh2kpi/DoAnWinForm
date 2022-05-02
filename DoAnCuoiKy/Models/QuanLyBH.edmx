@@ -34,13 +34,11 @@
           <Property Name="ship_address" Type="varchar" MaxLength="40" />
           <Property Name="ship_phone" Type="varchar" MaxLength="20" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'QuanLyBanHang.dbo.OrderItem' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="OrderItem">
           <Key>
-            <PropertyRef Name="unit_price" />
-            <PropertyRef Name="quantity" />
+            <PropertyRef Name="item_id" />
           </Key>
+          <Property Name="item_id" Type="int" Nullable="false" />
           <Property Name="order_id" Type="varchar" MaxLength="10" />
           <Property Name="product_id" Type="varchar" MaxLength="10" />
           <Property Name="unit_price" Type="int" Nullable="false" />
@@ -120,7 +118,7 @@ warning 6002: The table/view 'QuanLyBanHang.dbo.OrderItem' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OrderItem__order__30F848ED">
+        <Association Name="FK__OrderItem__order__4F7CD00D">
           <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
           <End Role="OrderItem" Type="Self.OrderItem" Multiplicity="*" />
           <ReferentialConstraint>
@@ -132,7 +130,7 @@ warning 6002: The table/view 'QuanLyBanHang.dbo.OrderItem' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__OrderItem__produ__31EC6D26">
+        <Association Name="FK__OrderItem__produ__5070F446">
           <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
           <End Role="OrderItem" Type="Self.OrderItem" Multiplicity="*" />
           <ReferentialConstraint>
@@ -172,18 +170,10 @@ warning 6002: The table/view 'QuanLyBanHang.dbo.OrderItem' does not have a prima
           <EntitySet Name="CartItem" EntityType="Self.CartItem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderItem" EntityType="Self.OrderItem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="OrderItem" EntityType="Self.OrderItem" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [OrderItem].[order_id] AS [order_id], 
-    [OrderItem].[product_id] AS [product_id], 
-    [OrderItem].[unit_price] AS [unit_price], 
-    [OrderItem].[quantity] AS [quantity], 
-    [OrderItem].[discount] AS [discount]
-    FROM [dbo].[OrderItem] AS [OrderItem]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK__CartItem__produc__45F365D3" Association="Self.FK__CartItem__produc__45F365D3">
             <End Role="Product" EntitySet="Product" />
             <End Role="CartItem" EntitySet="CartItem" />
@@ -196,11 +186,11 @@ warning 6002: The table/view 'QuanLyBanHang.dbo.OrderItem' does not have a prima
             <End Role="Person" EntitySet="Person" />
             <End Role="Order" EntitySet="Order" />
           </AssociationSet>
-          <AssociationSet Name="FK__OrderItem__order__30F848ED" Association="Self.FK__OrderItem__order__30F848ED">
+          <AssociationSet Name="FK__OrderItem__order__4F7CD00D" Association="Self.FK__OrderItem__order__4F7CD00D">
             <End Role="Order" EntitySet="Order" />
             <End Role="OrderItem" EntitySet="OrderItem" />
           </AssociationSet>
-          <AssociationSet Name="FK__OrderItem__produ__31EC6D26" Association="Self.FK__OrderItem__produ__31EC6D26">
+          <AssociationSet Name="FK__OrderItem__produ__5070F446" Association="Self.FK__OrderItem__produ__5070F446">
             <End Role="Product" EntitySet="Product" />
             <End Role="OrderItem" EntitySet="OrderItem" />
           </AssociationSet>
@@ -288,8 +278,7 @@ warning 6002: The table/view 'QuanLyBanHang.dbo.OrderItem' does not have a prima
         </EntityType>
         <EntityType Name="OrderItem">
           <Key>
-            <PropertyRef Name="unit_price" />
-            <PropertyRef Name="quantity" />
+            <PropertyRef Name="item_id" />
           </Key>
           <Property Name="order_id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="product_id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
@@ -298,6 +287,7 @@ warning 6002: The table/view 'QuanLyBanHang.dbo.OrderItem' does not have a prima
           <Property Name="discount" Type="Int32" />
           <NavigationProperty Name="Order" Relationship="Self.FK__OrderItem__order__30F848ED" FromRole="OrderItem" ToRole="Order" />
           <NavigationProperty Name="Product" Relationship="Self.FK__OrderItem__produ__31EC6D26" FromRole="OrderItem" ToRole="Product" />
+          <Property Name="item_id" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="FK__Product__cat_id__267ABA7A">
           <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
@@ -501,6 +491,7 @@ warning 6002: The table/view 'QuanLyBanHang.dbo.OrderItem' does not have a prima
           <EntitySetMapping Name="OrderItems">
             <EntityTypeMapping TypeName="QuanLyBanHangModel.OrderItem">
               <MappingFragment StoreEntitySet="OrderItem">
+                <ScalarProperty Name="item_id" ColumnName="item_id" />
                 <ScalarProperty Name="order_id" ColumnName="order_id" />
                 <ScalarProperty Name="product_id" ColumnName="product_id" />
                 <ScalarProperty Name="unit_price" ColumnName="unit_price" />

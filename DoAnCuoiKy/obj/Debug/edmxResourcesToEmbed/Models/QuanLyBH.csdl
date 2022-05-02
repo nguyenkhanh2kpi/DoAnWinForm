@@ -71,8 +71,7 @@
   </EntityType>
   <EntityType Name="OrderItem">
     <Key>
-      <PropertyRef Name="unit_price" />
-      <PropertyRef Name="quantity" />
+      <PropertyRef Name="item_id" />
     </Key>
     <Property Name="order_id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="product_id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
@@ -81,6 +80,7 @@
     <Property Name="discount" Type="Int32" />
     <NavigationProperty Name="Order" Relationship="Self.FK__OrderItem__order__30F848ED" FromRole="OrderItem" ToRole="Order" />
     <NavigationProperty Name="Product" Relationship="Self.FK__OrderItem__produ__31EC6D26" FromRole="OrderItem" ToRole="Product" />
+    <Property Name="item_id" Type="Int32" Nullable="false" />
   </EntityType>
   <Association Name="FK__Product__cat_id__267ABA7A">
     <End Role="Category" Type="Self.Category" Multiplicity="0..1" />

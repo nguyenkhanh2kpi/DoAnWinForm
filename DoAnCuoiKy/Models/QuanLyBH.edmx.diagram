@@ -17,7 +17,7 @@
         <AssociationConnector Association="QuanLyBanHangModel.FK__OrderItem__order__30F848ED" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyBanHangModel.FK__Person__role_id__2B3F6F97" ManuallyRouted="false" />
         <AssociationConnector Association="QuanLyBanHangModel.FK__OrderItem__produ__31EC6D26" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="QuanLyBanHangModel.CartItem" Width="1.5" PointX="8.25" PointY="5.75" />
+        <EntityTypeShape EntityType="QuanLyBanHangModel.CartItem" Width="1.5" PointX="8.125" PointY="5" />
         <AssociationConnector Association="QuanLyBanHangModel.FK__CartItem__produc__45F365D3" />
       </Diagram>
     </edmx:Diagrams>

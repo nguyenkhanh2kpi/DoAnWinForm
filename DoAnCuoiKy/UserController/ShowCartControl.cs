@@ -69,7 +69,10 @@ namespace DoAnCuoiKy.UserController
             using(var db = new QuanLyBHEntity())
             {
                 CartItem c =  db.CartItems.FirstOrDefault(s => s.product_id == this.product.pro_id);
-                c.quantity += 1;
+                if (c.quantity < c.Product.units_instock)
+                {
+                    c.quantity += 1;
+                }
                 db.SaveChanges();
                 labelQuantity.Text = c.quantity.ToString();
             }
