@@ -59,13 +59,15 @@ CREATE TABLE dbo.[Order](
 Go
 
 CREATE TABLE dbo.[OrderItem](
+	item_id int Primary key not null,
 	order_id varchar(10) references [Order](order_id),
 	product_id varchar(10) references Product(pro_id),
 	unit_price int not null,
 	quantity int not null,
 	discount int null,
 )
-Go
+go
+
 insert into [Role] values  ('r_1','customer')
 insert into [Role] values  ('r_2','employee')
 insert into [Role] values  ('r_3','manager')
