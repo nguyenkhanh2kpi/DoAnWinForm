@@ -25,6 +25,10 @@ namespace DoAnCuoiKy.Gui
             using(var db = new QuanLyBHEntity())
             {
                 int total = 0;
+                if (db.CartItems.Count() == 0)
+                {
+                    buttonOrder.Enabled = false;
+                }
                 foreach(var i in db.CartItems)
                 {
                     total = total +  ((int)i.quantity * (int)i.totalPrice);
@@ -88,7 +92,33 @@ namespace DoAnCuoiKy.Gui
                 {
                     var i = AddItem(order,item);
                     db.OrderItems.Add(i);
+                    ChangeStock(item.Product, item.quantity);
                 }
+            }
+            RemoveCart();
+            MessageBox.Show("Order is being processed");
+            buttonOrder.Enabled = false;
+        }
+        // change  stock
+        private void ChangeStock(Product product, int quantity)
+        {
+            using(var db = new QuanLyBHEntity())
+            {
+                var p = db.Products.FirstOrDefault(s => s.pro_id == product.pro_id);
+                p.units_instock = p.units_instock - quantity;
+                db.SaveChanges();
+            }
+        }
+
+        private void RemoveCart()
+        {
+            using(var db = new QuanLyBHEntity())
+            {
+                foreach(var i in db.CartItems.ToList())
+                {
+                    db.CartItems.Remove(i);
+                }
+                db.SaveChanges();
             }
         }
    

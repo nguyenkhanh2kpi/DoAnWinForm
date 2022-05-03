@@ -54,8 +54,11 @@ namespace DoAnCuoiKy.UserController
             {
                 if (!IsExistInCart())
                 {
-                    CartItem c = CreCartItem(this.product, 1);
-                    db.CartItems.Add(c);
+                    if (this.product.units_instock > 0)
+                    {
+                        CartItem c = CreCartItem(this.product, 1);
+                        db.CartItems.Add(c);
+                    }
                     db.SaveChanges();
                 }
             }
