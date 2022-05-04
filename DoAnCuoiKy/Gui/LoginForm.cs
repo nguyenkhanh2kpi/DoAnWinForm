@@ -72,7 +72,7 @@ namespace DoAnCuoiKy.Gui
                                 this.Visible = false;
                                 break;
                             case "r_2":
-                                var form2 = new EmployeeForm();
+                                var form2 = new EmployeeForm(per);
                                 form2.Show();
                                 this.Visible = false;
                                 break;

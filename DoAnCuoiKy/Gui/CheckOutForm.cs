@@ -92,20 +92,21 @@ namespace DoAnCuoiKy.Gui
                 {
                     var i = AddItem(order,item);
                     db.OrderItems.Add(i);
-                    ChangeStock(item.Product, item.quantity);
+                    ChangeStockAndUnitOnOrder(item.Product, item.quantity);
                 }
             }
             RemoveCart();
             MessageBox.Show("Order is being processed");
             buttonOrder.Enabled = false;
         }
-        // change  stock
-        private void ChangeStock(Product product, int quantity)
+        // change  stock and unit on order
+        private void ChangeStockAndUnitOnOrder(Product product, int quantity)
         {
             using(var db = new QuanLyBHEntity())
             {
                 var p = db.Products.FirstOrDefault(s => s.pro_id == product.pro_id);
                 p.units_instock = p.units_instock - quantity;
+                p.units_onOrder += quantity;
                 db.SaveChanges();
             }
         }

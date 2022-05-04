@@ -52,3 +52,5 @@ C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git\DoAnWinForm\DoAnCuoiKy\obj\Debug\D
 C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git\DoAnWinForm\DoAnCuoiKy\obj\Debug\DoAnCuoiKy.csproj.CoreCompileInputs.cache
 C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git\DoAnWinForm\DoAnCuoiKy\obj\Debug\DoAnCuoiKy.exe
 C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git\DoAnWinForm\DoAnCuoiKy\obj\Debug\DoAnCuoiKy.pdb
+C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git\DoAnWinForm\DoAnCuoiKy\obj\Debug\DoAnCuoiKy.Gui.OrderProcessingForm.resources
+C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git\DoAnWinForm\DoAnCuoiKy\obj\Debug\DoAnCuoiKy.Gui.ChangeStockForm.resources

@@ -54,9 +54,9 @@ namespace DoAnCuoiKy.UserController
                 }
                 catch
                 {
-                    MessageBox.Show("Removed, Press 'Cart' to reload");
+                    MessageBox.Show("Press 'UPDATE' to reload");
                 }
-                MessageBox.Show("Removed, Press 'Cart' to reload");
+                MessageBox.Show(" Press 'UPDATE' to reload");
 
                 db.SaveChanges();
                 LoadCartItem();
@@ -66,15 +66,22 @@ namespace DoAnCuoiKy.UserController
         // + 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            using(var db = new QuanLyBHEntity())
+            if(labelQuantity.Text != "0")
             {
-                CartItem c =  db.CartItems.FirstOrDefault(s => s.product_id == this.product.pro_id);
-                if (c.quantity < c.Product.units_instock)
+                using (var db = new QuanLyBHEntity())
                 {
-                    c.quantity += 1;
+                    CartItem c = db.CartItems.FirstOrDefault(s => s.product_id == this.product.pro_id);
+                    if (c.quantity < c.Product.units_instock)
+                    {
+                        c.quantity += 1;
+                    }
+                    db.SaveChanges();
+                    labelQuantity.Text = c.quantity.ToString();
                 }
-                db.SaveChanges();
-                labelQuantity.Text = c.quantity.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Your CartItem is deleted");
             }
         }
         // -
