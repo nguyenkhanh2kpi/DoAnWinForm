@@ -54,3 +54,6 @@ C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git\DoAnWinForm\DoAnCuoiKy\obj\Debug\D
 C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git\DoAnWinForm\DoAnCuoiKy\obj\Debug\DoAnCuoiKy.pdb
 C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git\DoAnWinForm\DoAnCuoiKy\obj\Debug\DoAnCuoiKy.Gui.OrderProcessingForm.resources
 C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git\DoAnWinForm\DoAnCuoiKy\obj\Debug\DoAnCuoiKy.Gui.ChangeStockForm.resources
+C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git\DoAnWinForm\DoAnCuoiKy\obj\Debug\DoAnCuoiKy.Gui.AddCategory.resources
+C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git\DoAnWinForm\DoAnCuoiKy\obj\Debug\DoAnCuoiKy.Gui.AddProduct.resources
+C:\Users\KHANH\OneDrive\Desktop\DeTaiWinF\git\DoAnWinForm\DoAnCuoiKy\obj\Debug\DoAnCuoiKy.Gui.AddPersonForm.resources
