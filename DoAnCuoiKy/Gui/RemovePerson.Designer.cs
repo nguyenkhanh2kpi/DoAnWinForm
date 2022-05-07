@@ -100,6 +100,7 @@ namespace DoAnCuoiKy.Gui
             this.Name = "RemovePerson";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RemovePerson";
+            this.Load += new System.EventHandler(this.RemovePerson_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
