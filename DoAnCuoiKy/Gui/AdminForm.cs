@@ -120,7 +120,7 @@ namespace DoAnCuoiKy.Gui
                     form3.ShowDialog();
                     break;
                 case "Category":
-                    var form = new AddCategory();
+                    var form = new AddCategoryForm();
                     form.ShowDialog();
                     break;
                 case "Product":
@@ -132,12 +132,55 @@ namespace DoAnCuoiKy.Gui
 
         private void changeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Person person = new Person();
+            string selected_per_id = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
+            using(var db = new QuanLyBHEntity())
+            {
+                person = db.People.FirstOrDefault(s => s.per_id == selected_per_id);
+            }
+            switch (this.manage)
+            {
+                case "Customer":
+                    var form2 = new AccountForm(person);
+                    form2.ShowDialog();
+                    break;
+                case "Employee":
+                    var form3 = new AccountForm(person);
+                    form3.ShowDialog();
+                    break;
+                case "Category":
+                    var form = new AddCategory();
+                    form.ShowDialog();
+                    break;
+                case "Product":
+                    var form1 = new AddProduct();
+                    form1.ShowDialog();
+                    break;
+            }
         }
 
         private void removeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            string selected_per_id = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
+            switch (this.manage)
+            {
+                case "Customer":
+                    var form2 = new RemovePerson(selected_per_id);
+                    form2.ShowDialog();
+                    break;
+                case "Employee":
+                    var form3 = new RemovePerson(selected_per_id);
+                    form3.ShowDialog();
+                    break;
+                case "Category":
+                    var form = new AddCategory();
+                    form.ShowDialog();
+                    break;
+                case "Product":
+                    var form1 = new AddProduct();
+                    form1.ShowDialog();
+                    break;
+            }
         }
     }
 }

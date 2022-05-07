@@ -58,8 +58,13 @@ namespace DoAnCuoiKy.Gui
                 using (var db = new QuanLyBHEntity())
                 {
                     var per = new Person();
-                    var numper = db.People.ToList().Count();
-                    per.per_id = ("p_" + (numper + 1).ToString()).ToString();
+                    var numper = 1;
+                    per.per_id = "p_1";
+                    while (FindPerson(per.per_id)==false)
+                    {
+                        per.per_id = "p_" + (numper + 1).ToString();
+                        numper += 1;
+                    }
                     per.role_id = "r_1";
                     per.per_name = name;
                     if (gender == "Male")
@@ -197,6 +202,21 @@ namespace DoAnCuoiKy.Gui
         private void RegisterForm_Load(object sender, EventArgs e)
         {
             comboBoxGender.SelectedIndex = 0;
+        }
+
+        // find person by id
+
+        private bool FindPerson(string id)
+        {
+            using(var db = new QuanLyBHEntity())
+            {
+                foreach(var p in db.People)
+                {
+                    if (id == p.per_id)
+                        return false;
+                }
+                return true;
+            }
         }
     }
 }

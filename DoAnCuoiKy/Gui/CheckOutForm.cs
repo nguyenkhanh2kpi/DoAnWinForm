@@ -16,7 +16,10 @@ namespace DoAnCuoiKy.Gui
         Person person;
         public CheckOutForm(Person person)
         {
-            this.person = person;
+            using (var db = new QuanLyBHEntity())
+            {
+                this.person = db.People.FirstOrDefault(s => s.per_id == person.per_id);
+            }
             InitializeComponent();
         }
 

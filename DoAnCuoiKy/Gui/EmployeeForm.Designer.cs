@@ -31,6 +31,7 @@ namespace DoAnCuoiKy.Gui
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.buttonOrder = new System.Windows.Forms.Button();
             this.LogoutButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -39,7 +40,6 @@ namespace DoAnCuoiKy.Gui
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.labelOder = new System.Windows.Forms.Label();
             this.labelOrderDetail = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.changeStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
@@ -59,6 +59,18 @@ namespace DoAnCuoiKy.Gui
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(223, 553);
             this.panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(17, 177);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(191, 66);
+            this.button1.TabIndex = 3;
+            this.button1.Tag = "Logout";
+            this.button1.Text = "Stock-Manage";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonOrder
             // 
@@ -147,30 +159,18 @@ namespace DoAnCuoiKy.Gui
             this.labelOrderDetail.TabIndex = 4;
             this.labelOrderDetail.Text = "OrderDetail";
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(17, 177);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(191, 66);
-            this.button1.TabIndex = 3;
-            this.button1.Tag = "Logout";
-            this.button1.Text = "Stock-Manage";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // contextMenuStrip2
             // 
             this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.changeStockToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(211, 56);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(169, 28);
             // 
             // changeStockToolStripMenuItem
             // 
             this.changeStockToolStripMenuItem.Name = "changeStockToolStripMenuItem";
-            this.changeStockToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.changeStockToolStripMenuItem.Size = new System.Drawing.Size(168, 24);
             this.changeStockToolStripMenuItem.Text = "Change Stock";
             this.changeStockToolStripMenuItem.Click += new System.EventHandler(this.changeStockToolStripMenuItem_Click);
             // 
